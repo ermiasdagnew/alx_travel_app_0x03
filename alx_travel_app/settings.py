@@ -16,3 +16,4 @@ CELERY_RESULT_BACKEND = "django-db"
 # Email configuration
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 DEFAULT_FROM_EMAIL = "no-reply@alxtravel.com"
+
