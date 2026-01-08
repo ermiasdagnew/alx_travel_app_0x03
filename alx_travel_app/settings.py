@@ -1,19 +1,19 @@
-# Django settings for alx_travel_app
+# settings.py
 
-INSTALLED_APPS = [
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django_celery_results",
-    "listings",
-]
+# ... other settings ...
 
-# Celery configuration
-CELERY_BROKER_URL = "amqp://localhost"
-CELERY_ACCEPT_CONTENT = ["json"]
-CELERY_TASK_SERIALIZER = "json"
-CELERY_RESULT_BACKEND = "django-db"
+# Celery Configuration
+CELERY_BROKER_URL = 'amqp://guest:guest@localhost:5672//' # Adjust as per your RabbitMQ setup
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'UTC' # Or your project's timezone
 
-# Email configuration
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-DEFAULT_FROM_EMAIL = "no-reply@alxtravel.com"
-
+# Email settings (ensure these are set up correctly for sending emails)
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.example.com' # Replace with your SMTP server
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'your_email@example.com'
+EMAIL_HOST_PASSWORD = 'your_email_password'
+DEFAULT_FROM_EMAIL = 'webmaster@example.com'
